@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Privacy Coin Tracker",
+  "productName": "Zcash Portfolio Tracker",
   "version": "0.1.0",
-  "identifier": "com.privacycoin.tracker",
+  "identifier": "com.zcashportfoliotracker.app",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:1420",
@@ -11,7 +11,7 @@
   },
   "app": {
     "windows": [
-      { "title": "Privacy Coin Tracker", "width": 1100, "height": 720 }
+      { "title": "Zcash Portfolio Tracker", "width": 1100, "height": 720 }
     ],
     "security": { "csp": null }
   },

@@ -2601,21 +2601,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "privacy-coin-tracker"
-version = "0.1.0"
-dependencies = [
- "mockito",
- "reqwest 0.12.28",
- "rusqlite",
- "rust_decimal",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tokio",
-]
-
-[[package]]
 name = "proc-macro-crate"
 version = "1.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5318,6 +5303,21 @@ dependencies = [
  "quote",
  "syn 2.0.118",
  "synstructure",
+]
+
+[[package]]
+name = "zcash-portfolio-tracker"
+version = "0.1.0"
+dependencies = [
+ "mockito",
+ "reqwest 0.12.28",
+ "rusqlite",
+ "rust_decimal",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tokio",
 ]
 
 [[package]]

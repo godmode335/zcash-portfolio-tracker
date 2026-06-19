@@ -9,7 +9,7 @@ function draw(canvas: HTMLCanvasElement, label: string, points: [number, string]
     type: "line",
     data: {
       labels: points.map((p) => new Date(p[0] * 1000).toLocaleDateString()),
-      datasets: [{ label, data: points.map((p) => Number(p[1])), borderColor: "#4caf50", tension: 0.2 }],
+      datasets: [{ label, data: points.map((p) => Number(p[1])), borderColor: "#f4b728", tension: 0.2 }],
     },
     options: { responsive: true, plugins: { legend: { display: true } } },
   });
