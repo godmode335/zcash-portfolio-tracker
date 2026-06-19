@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://privacycointracker.com/sitemap-index.xml
+Sitemap: https://zcashportfoliotracker.com/sitemap-index.xml
