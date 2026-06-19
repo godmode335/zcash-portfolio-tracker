@@ -1,8 +1,8 @@
----
+﻿---
 title: "Following Zcash (ZEC) Price History the Private Way"
 description: "How to watch ZEC price history and your portfolio value over time without an account or cloud sync."
 keywords: ["zcash price history", "zec price chart", "zcash portfolio value"]
-date: 2026-06-18
+date: 2026-06-16
 ---
 
 Watching the ZEC price is one thing; seeing how your own portfolio tracks against it is what actually matters.
@@ -16,4 +16,4 @@ Together they show whether your position is growing, independent of daily noise.
 ## Private by default
 Zcash Portfolio Tracker pulls only the public ZEC price; your holdings and history never leave your PC.
 
-[Download Zcash Portfolio Tracker](/download) — free for Windows.
+[Download Zcash Portfolio Tracker](/download) â€” free for Windows.

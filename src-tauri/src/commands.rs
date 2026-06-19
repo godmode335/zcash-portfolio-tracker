@@ -19,26 +19,12 @@ pub struct Dashboard {
     pub price_as_of: Option<i64>,
 }
 
-#[derive(Serialize)]
-pub struct CoinMeta {
-    pub id: String,
-    pub symbol: String,
-    pub name: String,
-}
-
 pub fn build_dashboard(db: &Db, portfolio_id: i64) -> Result<Dashboard, String> {
     let txs = db.list_transactions(portfolio_id).map_err(|e| e.to_string())?;
     let holdings = compute_holdings(&txs);
     let (prices, as_of) = db.cached_prices().map_err(|e| e.to_string())?;
     let valuation = value_holdings(&holdings, &prices);
     Ok(Dashboard { portfolio_id, valuation, price_as_of: as_of })
-}
-
-#[tauri::command]
-pub fn list_coins() -> Vec<CoinMeta> {
-    coins::all().iter().map(|c| CoinMeta {
-        id: c.id.to_string(), symbol: c.symbol.to_string(), name: c.name.to_string(),
-    }).collect()
 }
 
 #[tauri::command]

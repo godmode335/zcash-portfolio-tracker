@@ -21,7 +21,6 @@ pub fn run() {
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            commands::list_coins,
             commands::list_portfolios,
             commands::create_portfolio,
             commands::add_transaction,

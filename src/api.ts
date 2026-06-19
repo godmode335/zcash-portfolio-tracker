@@ -1,6 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
 
-export interface CoinMeta { id: string; symbol: string; name: string; }
 export interface Portfolio { id: number; name: string; created_at: number; }
 export interface Transaction {
   id: number; portfolio_id: number; coin_id: string;
@@ -22,7 +21,6 @@ export interface Dashboard {
 
 const now = () => Math.floor(Date.now() / 1000);
 
-export const listCoins = () => invoke<CoinMeta[]>("list_coins");
 export const listPortfolios = () => invoke<Portfolio[]>("list_portfolios");
 export const createPortfolio = (name: string) =>
   invoke<Portfolio>("create_portfolio", { name, now: now() });
