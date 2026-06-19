@@ -7,8 +7,8 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
     b.data.date.getTime() - a.data.date.getTime() ||
     a.data.title.localeCompare(b.data.title));
 
-const title = "Privacy Coin Guides & Comparisons | Privacy Coin Tracker Blog";
-const description = "Guides on tracking Zcash, Monero and other privacy coins, comparisons, and how to stay private.";
+const title = "Zcash Guides & How-Tos | Zcash Portfolio Tracker Blog";
+const description = "Guides on tracking Zcash (ZEC) privately — holdings, taxes, shielded vs transparent, and price history.";
 ---
 <BaseLayout title={title} description={description} path="/blog">
   <h1>Blog</h1>

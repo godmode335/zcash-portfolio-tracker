@@ -6,3 +6,4 @@ src-tauri/gen/
 website/node_modules/
 website/dist/
 website/.astro/
+.sdd-*-report.md
