@@ -3,6 +3,6 @@ import sitemap from "@astrojs/sitemap";
 
 // Keep this in sync with SITE_URL in src/config.ts
 export default defineConfig({
-  site: "https://privacycointracker.com",
+  site: "https://zcashportfoliotracker.com",
   integrations: [sitemap()],
 });
