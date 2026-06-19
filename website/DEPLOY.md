@@ -2,7 +2,7 @@
 
 ## Cloudflare Pages
 1. Push this repo to GitHub (done).
-2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → select `privacy-coin-tracker`.
+2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → select `zcash-portfolio-tracker`.
 3. Build settings:
    - Framework preset: Astro
    - Build command: `npm run build`
@@ -20,9 +20,9 @@
 2. Google Search Console → add the domain property → verify via DNS TXT → submit `https://<domain>/sitemap-index.xml`.
 
 ## Releasing a new app version
-Re-run the release step with the new version tag, always attaching the asset named `PrivacyCoinTracker-Setup.exe` so the website button keeps working:
+Re-run the release step with the new version tag, always attaching the asset named `ZcashPortfolioTracker-Setup.exe` so the website button keeps working:
 
 ```
-cp "src-tauri/target/release/bundle/nsis/Privacy Coin Tracker_<ver>_x64-setup.exe" "PrivacyCoinTracker-Setup.exe"
-gh release create v<ver> "PrivacyCoinTracker-Setup.exe" --title "Privacy Coin Tracker v<ver>" --notes "..."
+cp "src-tauri/target/release/bundle/nsis/Zcash Portfolio Tracker_<ver>_x64-setup.exe" "ZcashPortfolioTracker-Setup.exe"
+gh release create v<ver> "ZcashPortfolioTracker-Setup.exe" --title "Zcash Portfolio Tracker v<ver>" --notes "..."
 ```
