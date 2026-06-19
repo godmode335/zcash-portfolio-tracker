@@ -7,7 +7,7 @@ import { mountForms } from "./forms";
 const app = document.getElementById("app")!;
 app.innerHTML = `
   <header>
-    <h1>Privacy Coin Tracker</h1>
+    <h1>Zcash Portfolio Tracker</h1>
     <select id="portfolio-select"></select>
     <button id="refresh">Refresh prices</button>
   </header>
