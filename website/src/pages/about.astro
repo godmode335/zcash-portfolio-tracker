@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DownloadButton from "../components/DownloadButton.astro";
+import { GITHUB_OWNER, GITHUB_REPO } from "../config";
+const title = "About Zcash Portfolio Tracker";
+const description = "Zcash Portfolio Tracker is a free, local-first portfolio tracker for Zcash (ZEC) on Windows. Learn about the project.";
+const repo = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`;
+---
+<BaseLayout title={title} description={description} path="/about">
+  <h1>About</h1>
+  <p>Zcash Portfolio Tracker is a free Windows app for tracking Zcash (ZEC) without giving up your privacy. Your data stays local; there is no account and no cloud.</p>
+  <p>The project lives on <a href={repo} rel="noopener">GitHub</a>.</p>
+  <p><DownloadButton /></p>
+</BaseLayout>

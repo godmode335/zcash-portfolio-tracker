@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zcashportfoliotracker.com/sitemap-index.xml
