@@ -1,5 +1,5 @@
 import { listPortfolios, createPortfolio, getDashboard, refreshPrices,
-         getPortfolioHistory, getCoinHistory, listCoins } from "./api";
+         getPortfolioHistory, getCoinHistory } from "./api";
 import { renderDashboard } from "./dashboard";
 import { renderPortfolioChart, renderCoinChart } from "./charts";
 import { mountForms } from "./forms";
@@ -14,12 +14,11 @@ app.innerHTML = `
   <main id="dashboard"></main>
   <section class="charts">
     <canvas id="pf-chart" height="120"></canvas>
-    <div><select id="coin-chart-select"></select><canvas id="coin-chart" height="120"></canvas></div>
+    <div><h3>ZEC price (30d)</h3><canvas id="coin-chart" height="120"></canvas></div>
   </section>`;
 
 const select = document.getElementById("portfolio-select") as HTMLSelectElement;
 const dashEl = document.getElementById("dashboard")!;
-const coinSel = document.getElementById("coin-chart-select") as HTMLSelectElement;
 
 const forms = mountForms({
   onChange: async () => { await bootstrap(); },
@@ -45,18 +44,12 @@ async function show(id: number) {
   renderDashboard(dashEl, await getDashboard(id));
   const pf = document.getElementById("pf-chart") as HTMLCanvasElement;
   renderPortfolioChart(pf, await getPortfolioHistory(id));
-  if (!coinSel.dataset.filled) {
-    const coins = await listCoins();
-    coinSel.innerHTML = coins.map((c) => `<option value="${c.id}">${c.symbol}</option>`).join("");
-    coinSel.dataset.filled = "1";
-    coinSel.addEventListener("change", drawCoin);
-  }
   await drawCoin();
 }
 
 async function drawCoin() {
   const cc = document.getElementById("coin-chart") as HTMLCanvasElement;
-  renderCoinChart(cc, coinSel.value, await getCoinHistory(coinSel.value, 30));
+  renderCoinChart(cc, "zcash", await getCoinHistory("zcash", 30));
 }
 
 select.addEventListener("change", () => show(Number(select.value)));

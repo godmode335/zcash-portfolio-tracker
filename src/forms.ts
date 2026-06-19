@@ -1,14 +1,13 @@
-import { listCoins, addTransaction, createPortfolio, type CoinMeta } from "./api";
+import { addTransaction, createPortfolio } from "./api";
 
 export function mountForms(opts: { onChange: () => void; currentPortfolioId: () => number }): HTMLElement {
   const panel = document.createElement("section");
   panel.className = "forms";
   panel.innerHTML = `
     <fieldset>
-      <legend>Add transaction</legend>
-      <select id="f-coin"></select>
+      <legend>Add ZEC transaction</legend>
       <select id="f-type"><option value="buy">Buy</option><option value="sell">Sell</option></select>
-      <input id="f-qty" type="number" step="any" placeholder="Quantity" />
+      <input id="f-qty" type="number" step="any" placeholder="ZEC amount" />
       <input id="f-price" type="number" step="any" placeholder="Price USD" />
       <input id="f-date" type="date" />
       <button id="f-add">Add</button>
@@ -20,16 +19,11 @@ export function mountForms(opts: { onChange: () => void; currentPortfolioId: () 
       <button id="f-pcreate">Create</button>
     </fieldset>`;
 
-  listCoins().then((coins: CoinMeta[]) => {
-    (panel.querySelector("#f-coin") as HTMLSelectElement).innerHTML =
-      coins.map((c) => `<option value="${c.id}">${c.symbol} — ${c.name}</option>`).join("");
-  });
-
   const err = panel.querySelector("#f-err") as HTMLElement;
 
   panel.querySelector("#f-add")!.addEventListener("click", async () => {
     err.textContent = "";
-    const coin = (panel.querySelector("#f-coin") as HTMLSelectElement).value;
+    const coin = "zcash";
     const type = (panel.querySelector("#f-type") as HTMLSelectElement).value as "buy" | "sell";
     const qty = (panel.querySelector("#f-qty") as HTMLInputElement).value;
     const price = (panel.querySelector("#f-price") as HTMLInputElement).value;
